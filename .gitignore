@@ -1,0 +1,29 @@
+# Ignore Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignore virtual environment
+venv/
+
+# Ignore environment variables or secrets
+.env
+
+# Ignore PyInstaller build folders
+build/
+dist/
+*.spec
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore log and temp files
+*.log
+*.tmp
+
+# Ignore VSCode settings (if you use it)
+.vscode/
