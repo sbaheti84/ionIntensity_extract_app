@@ -9,10 +9,7 @@ venv/
 # Ignore environment variables or secrets
 .env
 
-# Ignore PyInstaller build folders
-build/
-dist/
-*.spec
+
 
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
