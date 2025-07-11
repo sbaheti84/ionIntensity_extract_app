@@ -1,10 +1,12 @@
 # -*- mode: python ; coding: utf-8 -*-
 block_cipher = None
 
+from PyInstaller.utils.hooks import collect_dynamic_libs
+
 a = Analysis(
     ['launch_cli.py'],
     pathex=[],
-    binaries=[],
+    binaries=collect_dynamic_libs('socket') + collect_dynamic_libs('streamlit'),
     datas=[('app_launcher.py', '.')],
     hiddenimports=['streamlit'],
     hookspath=[],
