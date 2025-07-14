@@ -5,6 +5,7 @@ __pycache__/
 
 # Ignore virtual environment
 venv/
+old/
 
 # Ignore environment variables or secrets
 .env
@@ -21,6 +22,7 @@ Thumbs.db
 # Ignore log and temp files
 *.log
 *.tmp
+launch_cli.py.old.py
 
 # Ignore VSCode settings (if you use it)
 .vscode/

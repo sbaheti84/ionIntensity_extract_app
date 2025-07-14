@@ -1,41 +1,38 @@
 # -*- mode: python ; coding: utf-8 -*-
-block_cipher = None
 
-from PyInstaller.utils.hooks import collect_dynamic_libs
 
 a = Analysis(
     ['launch_cli.py'],
     pathex=[],
-    binaries=collect_dynamic_libs('socket') + collect_dynamic_libs('streamlit'),
+    binaries=[],
     datas=[('app_launcher.py', '.')],
-    hiddenimports=['streamlit'],
+    hiddenimports=[],
     hookspath=[],
+    hooksconfig={},
     runtime_hooks=[],
     excludes=[],
-    noarchive=False,
+    noarchive=True,
+    optimize=0,
 )
-
-pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
+pyz = PYZ(a.pure)
 
 exe = EXE(
     pyz,
     a.scripts,
-    [],
-    exclude_binaries=True,
+    a.binaries,
+    a.datas,
+    [('v', None, 'OPTION')],
     name='launch_cli',
-    debug=False,
+    debug=True,
     bootloader_ignore_signals=False,
     strip=False,
     upx=True,
+    upx_exclude=[],
+    runtime_tmpdir=None,
     console=True,
-)
-
-coll = COLLECT(
-    exe,
-    a.binaries,
-    a.zipfiles,
-    a.datas,
-    strip=False,
-    upx=True,
-    name='launch_cli'
+    disable_windowed_traceback=False,
+    argv_emulation=False,
+    target_arch=None,
+    codesign_identity=None,
+    entitlements_file=None,
 )
